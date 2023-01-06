@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-firstColor: hsla(254, 94%, 20%, 1);
+  --bg-secondColor: hsla(284, 100%, 50%, 1);
+  --bg-card:hsla(0, 0%, 100%, 1);
+
+  --tx-color: hsla(238, 27%, 28%, 1);
+
+  font-size: 62.5%;
+}
+
+body {
+  background: linear-gradient(45deg, var(--bg-firstColor), var(--bg-secondColor));
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: gradient 10s ease infinite;
+  background-size: 200% 200%;
+}
+
+.card,
+.card-opened {
+  background-color: var(--bg-card);
+  padding: 4.8rem 6.4rem 6.4rem;
+  width: 42.8rem;
+  text-align: center;
+  
+  box-shadow: 0rem 2rem 5rem rgba(0, 0, 0, 0.8);
+  border-radius: 0.5rem;
+}
+
+.card-opened {
+  padding: 4.8rem 6.4rem;
+}
+
+.card h1,
+.card-opened h1 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+  width: 25.8rem;
+  margin: 0 auto;
+
+  color: var(--tx-color);
+
+  margin-bottom: 1.4rem;
+}
+
+.card-opened h1 {
+  width: 29.7rem;
+  margin-bottom: 1.7rem;
+}
+
+.card p {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.0rem;
+
+  color: var(--tx-color);
+
+  margin-bottom: 2rem;
+}
+
+.card-opened p {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+  text-align: center;
+  
+  color: #000000;
+
+  background: #E4EDF1;
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(85, 85, 85, 0.5);
+
+  margin-bottom: 6rem;
+  padding: 1rem;
+
+  animation: opened-cookie 2.5s;
+}
+
+.hide {
+  display: none;
+}
+
+button {
+  background: #FF9500;
+  border-radius: 4px;
+  border: none;
+
+  padding: 1.6rem;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2.0rem;
+
+  text-align: center;
+
+  color: #FFFFFF;
+
+  margin-top: 5.9rem;
+}
+
+.card img:hover {
+  animation: shake .15s infinite;
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #f8a22a;
+}
+
+@keyframes shake {
+  0% {
+    margin-left: 0;
+    rotate: 0deg;
+    transform: translateX(0px);
+  }
+  25% {
+    margin-left: 5px;
+    rotate: 4deg;
+    transform: translateX(4px);
+  }
+  50% {
+    margin-left: 0;
+    rotate: 0deg;
+    transform: translateX(0px);
+  }
+  75% {
+    margin-left: -5px;
+    rotate: -4deg;
+    transform: translateX(-4px);
+  }
+  100% {
+    margin-left: 0;
+    rotate: 0deg;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes opened-cookie {
+  0%{
+    transform: translateY(180px) scale(0);
+  }
+
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes gradient {
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
